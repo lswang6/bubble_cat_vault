@@ -13,6 +13,7 @@
 .obsidian/cache/
 .obsidian/plugins/obsidian-git/*.log
 .obsidian/plugins/obsidian-git/tmp/
+.obsidian/**/*.DS_Store
 
 # ==========================
 # 临时 / 编辑器文件
