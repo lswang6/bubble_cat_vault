@@ -1,0 +1,129 @@
+{
+	"nodes": [
+		{
+			"id": "group_hk",
+			"type": "group",
+			"x": -600,
+			"y": -200,
+			"width": 500,
+			"height": 600,
+			"label": "Hong Kong (The Established Titan)",
+			"color": "5"
+		},
+		{
+			"id": "group_hainan",
+			"type": "group",
+			"x": 100,
+			"y": -200,
+			"width": 500,
+			"height": 600,
+			"label": "Hainan (The Rising Challenger)",
+			"color": "1"
+		},
+		{
+			"id": "node_hk_strength",
+			"type": "text",
+			"x": -580,
+			"y": -150,
+			"width": 460,
+			"height": 220,
+			"text": "## 核心优势 (Core Strengths)\n\n- **普通法系 (Common Law)**: 国际投资者信赖的基石，契约精神的保障。\n- **资金自由流动**: 真正的离岸中心，无外汇管制，货币自由兑换。\n- **金融基建**: 拥有深厚的 IPO 市场、美元债市场及全球顶尖的资产管理生态。\n- **人才储备**: 高度专业化的金融、法律从业人员。",
+			"color": "5"
+		},
+		{
+			"id": "node_hk_outlook",
+			"type": "text",
+			"x": -580,
+			"y": 100,
+			"width": 460,
+			"height": 220,
+			"text": "## 2036 展望 (Outlook)\n\n- **超级联系人 2.0**: 继续作为中国与世界的资本接口，重点转向中东与东盟资本。\n- **最大离岸人民币中心**: 随着人民币国际化，HK 将处理全球绝大部分的离岸人民币结算与投融资。\n- **Web3 & 虚拟资产**: 建立合规的数字资产交易生态。",
+			"color": "5"
+		},
+		{
+			"id": "node_hainan_strength",
+			"type": "text",
+			"x": 120,
+			"y": -150,
+			"width": 460,
+			"height": 220,
+			"text": "## 核心优势 (Core Strengths)\n\n- **自贸港政策 (FTP)**: 封关运作后实现“零关税、低税率、简税制”。\n- **税收优惠**: 企业所得税与个人所得税最高 15%，对境内资本极具吸引力。\n- **实体依托**: 背靠庞大的中国消费市场与实体产业，物流与贸易驱动金融发展。",
+			"color": "1"
+		},
+		{
+			"id": "node_hainan_outlook",
+			"type": "text",
+			"x": 120,
+			"y": 100,
+			"width": 460,
+			"height": 220,
+			"text": "## 2036 展望 (Outlook)\n\n- **区域贸易金融中心**: 服务于 RCEP 和东南亚的贸易结算与融资中心。\n- **特色金融**: 聚焦跨境理财（跨境资产管理）、大宗商品交易及碳交易。\n- **境内关外**: 提供比内地更灵活但比香港更受控的跨境资金通道 (NRA+账户体系)。",
+			"color": "1"
+		},
+		{
+			"id": "node_compare_capital",
+			"type": "text",
+			"x": -250,
+			"y": 450,
+			"width": 500,
+			"height": 160,
+			"text": "### 关键对比：资金与制度\n\n| 维度 | 香港 (Hong Kong) | 海南 (Hainan) |\n|---|---|---|\n| **资金流动** | 完全自由，无管制 | \"二线\"管住，有限度的自由 |\n| **法律体系** | 普通法 (Common Law) | 内地法律 + 特区法规 |\n| **主要客群** | 全球机构投资者 | 境内高净值人群 & 贸易商 |",
+			"color": "6"
+		},
+		{
+			"id": "node_verdict",
+			"type": "text",
+			"x": -250,
+			"y": 660,
+			"width": 500,
+			"height": 250,
+			"text": "# 终极结论 (Verdict 2036)\n\n**香港在该时间点金融实力依然更强**\n\n- **香港**将保持其作为全球顶级**资本市场** (Capital Market) 的地位，是“融资”与“定价”中心。\n- **海南**将成为顶级的**贸易与财富管理中心**，侧重于实体经济并非纯金融。\n\n**关系**: 互补大于竞争。香港是“出海口”，海南是“内循环与双循环的交汇点”。",
+			"color": "3"
+		}
+	],
+	"edges": [
+		{
+			"id": "edge_1",
+			"fromNode": "node_hk_strength",
+			"fromSide": "bottom",
+			"toNode": "node_hk_outlook",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "edge_2",
+			"fromNode": "node_hainan_strength",
+			"fromSide": "bottom",
+			"toNode": "node_hainan_outlook",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "edge_3",
+			"fromNode": "group_hk",
+			"fromSide": "bottom",
+			"toNode": "node_compare_capital",
+			"toSide": "left",
+			"label": "比较",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "edge_4",
+			"fromNode": "group_hainan",
+			"fromSide": "bottom",
+			"toNode": "node_compare_capital",
+			"toSide": "right",
+			"label": "比较",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "edge_5",
+			"fromNode": "node_compare_capital",
+			"fromSide": "bottom",
+			"toNode": "node_verdict",
+			"toSide": "top",
+			"label": "得出结论",
+			"toEnd": "arrow"
+		}
+	]
+}
