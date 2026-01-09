@@ -25,10 +25,17 @@
             "id": "2bccfe9370d406cb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
+              "type": "canvas",
+              "state": {
+                "file": "清朝皇帝历史.canvas",
+                "viewState": {
+                  "x": 1364.9500929988296,
+                  "y": 1110.9322236620542,
+                  "zoom": -0.5782807412224197
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "清朝皇帝历史"
             }
           }
         ],
@@ -183,6 +190,8 @@
   "active": "2bccfe9370d406cb",
   "lastOpenFiles": [
     "清朝皇帝历史.canvas",
+    "英伟达CES2025新品解析.canvas",
+    "测试.canvas",
     "README.md",
     "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
     "自动化码垛 打包机器人 需求.html",
