@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"id":"title","type":"text","text":"# 英伟达 CES 2025 新品发布会\n## 黄仁勋的AI帝国扩张计划","x":-420,"y":-580,"width":840,"height":120,"color":"5"},
+		{"id":"intro","type":"text","text":"## 整体主题：AI无处不在\n\n从「聊天机器人」进化到「能干活的AI助手」\n- 不只是在云端训练AI\n- 更要让AI能理解物理世界\n- 让每个人都能用上AI算力","x":-420,"y":-420,"width":840,"height":180,"color":"1"},
+		{"id":"category1","type":"text","text":"# 🎮 游戏玩家专区\nRTX 50系列显卡","x":-800,"y":-180,"width":340,"height":120,"color":"4"},
+		{"id":"rtx5090","type":"text","text":"## RTX 5090 旗舰怪兽\n\n**售价：$1,999（约1.4万元）**\n**上市：1月30日**\n\n### 你能得到什么？\n- 性能是上代4090的2倍\n- 920亿个晶体管（相当于920亿个微型开关）\n- 每秒3352万亿次AI运算\n\n### 人话翻译：\n就像把两台4090塞进一张卡里，玩4K游戏全特效随便开，还能顺便跑AI画图、视频剪辑","x":-800,"y":-20,"width":340,"height":400,"color":"4"},
+		{"id":"rtx5080","type":"text","text":"## RTX 5080 性价比之选\n\n**售价：$999（约7千元）**\n**上市：1月30日**\n\n### 特点：\n- 价格砍半，性能依然强劲\n- 适合2K/4K游戏玩家\n- 新一代DLSS 4技术加持","x":-800,"y":420,"width":340,"height":280,"color":"4"},
+		{"id":"rtx5070","type":"text","text":"## RTX 5070系列\n\n**RTX 5070 Ti: $749**\n**RTX 5070: $549**\n**上市：2月**\n\n### 甜品级选择：\n- 价格更亲民\n- 1080p/2K游戏无压力\n- 入门AI学习也够用","x":-800,"y":740,"width":340,"height":280,"color":"4"},
+		{"id":"tech-dlss4","type":"text","text":"## 🚀 黑科技：DLSS 4\n\n### 什么是DLSS？\n想象你在玩游戏时，AI在旁边帮你「脑补」画面：\n- 游戏只渲染一部分画面\n- AI自动生成中间的帧\n- 你看到的是流畅的高清画面\n\n### 实际效果：\n- 帧率提升数倍\n- 延迟降低75%（Reflex 2技术）\n- 画质反而更好","x":-420,"y":-20,"width":380,"height":400,"color":"2"},
+		{"id":"category2","type":"text","text":"# 🖥️ AI爱好者专区\nProject DIGITS","x":-420,"y":420,"width":380,"height":120,"color":"3"},
+		{"id":"digits","type":"text","text":"## Project DIGITS\n### 桌面级AI超级计算机\n\n**售价：$3,000（约2.2万元）**\n**上市：5月**\n**大小：像Mac mini一样小**\n\n### 核心配置：\n- GB10 Grace Blackwell超级芯片\n- 128GB超高速内存\n- 4TB存储空间\n- 1 PFLOP算力（每秒1千万亿次运算）\n\n### 能干什么？\n✅ 在家跑2000亿参数的AI模型\n✅ 两台联机能跑4000亿参数模型\n✅ 在本地训练和测试AI\n✅ 然后无缝部署到云端\n\n### 人话翻译：\n以前跑大模型要租云服务器，现在在家插电就能玩。就像从网吧时代进入家用电脑时代。","x":-420,"y":580,"width":380,"height":580,"color":"3"},
+		{"id":"category3","type":"text","text":"# 🏭 企业/数据中心专区\nRubin AI平台","x":0,"y":-180,"width":400,"height":120,"color":"6"},
+		{"id":"rubin","type":"text","text":"## Rubin AI平台\n### 下一代AI训练/推理平台\n\n**上市：2026年下半年**\n\n### 6款新芯片组合拳：\n\n1️⃣ **Rubin GPU** - AI运算核心\n   - 推理算力是上代Blackwell的5倍\n   - 第三代Transformer引擎\n\n2️⃣ **Vera CPU** - 中央处理器\n   - 基于ARM架构\n\n3️⃣ **NVLink 6** - 芯片间高速公路\n   - 让多个GPU高速通信\n\n4️⃣ **ConnectX-9** - 超级网卡\n   - 数据传输更快\n\n5️⃣ **BlueField-4 DPU** - 数据处理单元\n   - 专门处理网络数据\n\n6️⃣ **Spectrum-6** - 以太网交换机\n   - 数据中心的交通枢纽","x":0,"y":-20,"width":400,"height":580,"color":"6"},
+		{"id":"rubin-customers","type":"text","text":"## 谁在用Rubin？\n\n首批客户豪华阵容：\n- AWS（亚马逊云）\n- Microsoft（微软）\n- Google（谷歌）\n- OpenAI（ChatGPT的东家）\n- Anthropic（Claude的东家）\n- Meta（Facebook母公司）\n- xAI（马斯克的AI公司）\n- CoreWeave","x":0,"y":600,"width":400,"height":340,"color":"6"},
+		{"id":"category4","type":"text","text":"# 🤖 未来科技专区\n物理AI与机器人","x":440,"y":-180,"width":380,"height":120,"color":"5"},
+		{"id":"physical-ai","type":"text","text":"## 物理AI是什么？\n\n### 传统AI vs 物理AI\n\n**传统AI（ChatGPT等）：**\n- 只能聊天、写文章\n- 活在数字世界里\n- 不理解真实世界\n\n**物理AI（未来方向）：**\n- 理解三维空间\n- 能操控机械臂\n- 知道物体会掉落、碰撞\n- 能做长期规划并执行\n\n### 通俗理解：\n就像从「只会纸上谈兵的军师」\n进化成「能上战场打仗的将军」","x":440,"y":-20,"width":380,"height":420,"color":"5"},
+		{"id":"robot-tech","type":"text","text":"## 机器人技术栈\n\n### Cosmos模型\n- 开源的机器人视觉模型\n- 让机器人「看懂」世界\n\n### GR00T系列\n- 机器人的「大脑」\n- 负责学习、推理、规划动作\n\n### 应用场景：\n🏭 工厂自动化生产\n🏠 家庭服务机器人\n🏥 医疗辅助机器人\n🚗 自动驾驶汽车","x":440,"y":440,"width":380,"height":380,"color":"5"},
+		{"id":"strategy","type":"text","text":"## 🎯 英伟达的战略转变\n\n### 从「训练」到「推理」\n\n**以前（训练时代）：**\n花巨资训练大模型\n→ 需要几千块GPU\n→ 普通人用不起\n\n**现在（推理时代）：**\n模型训练好后，重点是高效运行\n→ 推理芯片更重要\n→ 个人也能用AI\n\n### 英伟达的布局：\n- 高端：Rubin平台（给大厂）\n- 中端：RTX 50系列（给专业人士）\n- 入门：Project DIGITS（给个人）\n\n**目标：让AI真正普及到每个人**","x":440,"y":860,"width":380,"height":460,"color":"1"},
+		{"id":"summary","type":"text","text":"# 💡 一句话总结\n\n## CES 2025，英伟达在做什么？\n\n**让AI从云端走进你的桌面**\n**让AI从聊天走进现实世界**\n**让AI从少数人的玩具变成所有人的工具**\n\n---\n\n### 关键数字记忆：\n- RTX 5090：$1,999，性能翻倍\n- Project DIGITS：$3,000，家用AI超算\n- Rubin平台：2026年，推理算力×5\n\n### 核心理念：\n**AI不再是聊天机器人**\n**而是能理解物理世界、完成真实工作的智能伙伴**","x":-420,"y":1200,"width":840,"height":460,"color":"1"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"intro","fromSide":"bottom","toNode":"category1","toSide":"top"},
+		{"id":"e2","fromNode":"category1","fromSide":"bottom","toNode":"rtx5090","toSide":"top"},
+		{"id":"e3","fromNode":"rtx5090","fromSide":"bottom","toNode":"rtx5080","toSide":"top"},
+		{"id":"e4","fromNode":"rtx5080","fromSide":"bottom","toNode":"rtx5070","toSide":"top"},
+		{"id":"e5","fromNode":"intro","fromSide":"bottom","toNode":"tech-dlss4","toSide":"top"},
+		{"id":"e6","fromNode":"tech-dlss4","fromSide":"bottom","toNode":"category2","toSide":"top"},
+		{"id":"e7","fromNode":"category2","fromSide":"bottom","toNode":"digits","toSide":"top"},
+		{"id":"e8","fromNode":"intro","fromSide":"bottom","toNode":"category3","toSide":"top"},
+		{"id":"e9","fromNode":"category3","fromSide":"bottom","toNode":"rubin","toSide":"top"},
+		{"id":"e10","fromNode":"rubin","fromSide":"bottom","toNode":"rubin-customers","toSide":"top"},
+		{"id":"e11","fromNode":"intro","fromSide":"bottom","toNode":"category4","toSide":"top"},
+		{"id":"e12","fromNode":"category4","fromSide":"bottom","toNode":"physical-ai","toSide":"top"},
+		{"id":"e13","fromNode":"physical-ai","fromSide":"bottom","toNode":"robot-tech","toSide":"top"},
+		{"id":"e14","fromNode":"robot-tech","fromSide":"bottom","toNode":"strategy","toSide":"top"},
+		{"id":"e15","fromNode":"rtx5070","fromSide":"bottom","toNode":"summary","toSide":"top","toEnd":"none"},
+		{"id":"e16","fromNode":"digits","fromSide":"bottom","toNode":"summary","toSide":"top","toEnd":"none"},
+		{"id":"e17","fromNode":"rubin-customers","fromSide":"bottom","toNode":"summary","toSide":"top","toEnd":"none"},
+		{"id":"e18","fromNode":"strategy","fromSide":"bottom","toNode":"summary","toSide":"top","toEnd":"none"}
+	]
+}
