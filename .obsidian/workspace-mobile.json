@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test 2.md",
+                "file": "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "test 2"
+              "title": "处理 .DS_Store 文件的问题等 terminal命令"
             }
           }
         ],
@@ -127,7 +127,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "test 2.md",
+            "file": "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -137,7 +137,7 @@
             "unlinkedCollapsed": true
           },
           "icon": "links-coming-in",
-          "title": "Backlinks"
+          "title": "反向链接"
         }
       },
       {
@@ -186,7 +186,7 @@
   },
   "active": "2bccfe9370d406cb",
   "lastOpenFiles": [
-    "test.md",
-    "test 2.md"
+    "test 2.md",
+    "test.md"
   ]
 }
