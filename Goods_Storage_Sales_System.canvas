@@ -1,0 +1,42 @@
+{
+	"nodes":[
+		{"id":"group_warehouse","type":"group","x":-580,"y":-200,"width":560,"height":940,"color":"4","label":"Warehouse"},
+		{"id":"group_dashboard","type":"group","x":-800,"y":-800,"width":1180,"height":440,"color":"2","label":"Data Dashboard"},
+		{"id":"group_sales","type":"group","x":-1520,"y":-160,"width":560,"height":900,"color":"1","label":"Market & Sales"},
+		{"id":"group_finance","type":"group","x":320,"y":-160,"width":560,"height":900,"color":"5","label":"Finance & Management"},
+		{"id":"node_w1","type":"text","text":"### Inventory DB\n\n**Core Data**\n- SKU Count\n- Location Info\n- Cost/Price","x":-540,"y":60,"width":480,"height":180,"color":"4"},
+		{"id":"node_w3","type":"text","text":"#### Low Stock Alert\n\nAlert! < Safe Stock","x":-540,"y":-120,"width":220,"height":140,"color":"6"},
+		{"id":"node_w4","type":"text","text":"#### Purchase Request (PR)\n\nInitiate Restock","x":-280,"y":-120,"width":220,"height":140,"color":"4"},
+		{"id":"node_f2","type":"text","text":"#### Payable\n\n**Role**: Accountant\n- Review PO\n- Make Payment","x":360,"y":-80,"width":480,"height":140,"color":"5"},
+		{"id":"node_m1","type":"text","text":"#### Approval\n**Role**: GM\nApprove large purchases","x":360,"y":20,"width":480,"height":130,"color":"3"},
+		{"id":"node_m2","type":"text","text":"#### Financial Report\n\n- Total Sales\n- Profit Analysis\n- Cost Accounting","x":360,"y":500,"width":480,"height":180,"color":"5"},
+		{"id":"node_s4","type":"text","text":"#### Feedback\n\nCollect feedback, improve service","x":-1480,"y":500,"width":480,"height":140,"color":"1"},
+		{"id":"node_s3","type":"text","text":"#### Create SO\n\n**Action**: Confirm Order\n**Data**: Create Record\n-> Update Dashboard","x":-1480,"y":320,"width":480,"height":140,"color":"1"},
+		{"id":"node_s1","type":"text","text":"#### Customer Inquiry\nStart Point\n\nCustomer initiates purchase request or inquiry","x":-1480,"y":-120,"width":480,"height":140,"color":"1"},
+		{"id":"node_s2","type":"text","text":"#### Quote & Check\n\n**Role**: Salesperson\n- Check Availability\n- Make Quote","x":-1480,"y":75,"width":480,"height":150,"color":"1"},
+		{"id":"node_w2","type":"text","text":"#### Outbound\n\n**Role**: Warehouse Keeper\n- Pick, Pack, Ship\n- Deduct Inventory","x":-540,"y":300,"width":480,"height":180,"color":"4"},
+		{"id":"node_w5","type":"text","text":"#### Inbound\n\n**Role**: Warehouse Keeper\n- Receive & QC\n- Shelving\n- Add Inventory","x":-540,"y":520,"width":480,"height":160,"color":"4"},
+		{"id":"node_d1","type":"text","text":"## Sales Stats\n\n**Key Metrics**:\n- Daily Sales Volume\n- Monthly Revenue\n- Order Fulfillment Rate\n\n[Chart Placeholder]","x":-760,"y":-760,"width":380,"height":360,"color":"2"},
+		{"id":"node_d2","type":"text","text":"## Asset Value\n\n- Total Stock Value\n- Turnover Rate\n- Dead Stock Warning","x":-340,"y":-760,"width":340,"height":360,"color":"2"},
+		{"id":"node_d3","type":"text","text":"## Top Sellers\n\n1. Product A\n2. Product B\n3. Product C","x":40,"y":-760,"width":300,"height":360,"color":"2"},
+		{"id":"node_f1","type":"text","text":"#### Receivable\n\n**Role**: Accountant\n- Review SO\n- Confirm Payment\n- Issue Invoice","x":360,"y":240,"width":480,"height":200,"color":"5"}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"node_s1","fromSide":"bottom","toNode":"node_s2","toSide":"top","label":"Inquiry"},
+		{"id":"e2","fromNode":"node_s2","fromSide":"right","toNode":"node_w1","toSide":"left","color":"6","label":"Check Stock"},
+		{"id":"e3","fromNode":"node_s2","fromSide":"bottom","toNode":"node_s3","toSide":"top","label":"Available"},
+		{"id":"e4","fromNode":"node_s3","fromSide":"right","toNode":"node_f1","toSide":"left","label":"Submit to Finance"},
+		{"id":"e5","fromNode":"node_f1","fromSide":"left","toNode":"node_w2","toSide":"right","label":"Paid/Release"},
+		{"id":"e6","fromNode":"node_w2","fromSide":"left","toNode":"node_s4","toSide":"right","label":"Ship/Deliver"},
+		{"id":"e7","fromNode":"node_w2","fromSide":"top","toNode":"node_w1","toSide":"bottom","color":"1","label":"Deduct"},
+		{"id":"e8","fromNode":"node_s3","fromSide":"top","toNode":"node_d1","toSide":"bottom","color":"2","label":"Update Data"},
+		{"id":"e9","fromNode":"node_w1","fromSide":"top","toNode":"node_w3","toSide":"bottom","color":"6","label":"Below Threshold"},
+		{"id":"e10","fromNode":"node_w3","fromSide":"right","toNode":"node_w4","toSide":"left"},
+		{"id":"e11","fromNode":"node_w4","fromSide":"right","toNode":"node_m1","toSide":"left","label":"Approve"},
+		{"id":"e12","fromNode":"node_m1","fromSide":"top","toNode":"node_f2","toSide":"bottom","label":"Pass"},
+		{"id":"e13","fromNode":"node_f2","fromSide":"left","toNode":"node_w5","toSide":"right","label":"Buy/Arrive"},
+		{"id":"e14","fromNode":"node_w5","fromSide":"top","toNode":"node_w1","toSide":"bottom","color":"4","label":"Stock In"},
+		{"id":"e15","fromNode":"node_f1","fromSide":"bottom","toNode":"node_m2","toSide":"top"},
+		{"id":"e16","fromNode":"node_f2","fromSide":"bottom","toNode":"node_m2","toSide":"top"}
+	]
+}
