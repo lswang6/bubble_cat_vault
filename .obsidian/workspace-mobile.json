@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "处理 .DS_Store 文件的问题等 terminal命令"
+              "title": "README"
             }
           }
         ],
@@ -127,7 +127,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
+            "file": "README.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -186,6 +186,13 @@
   },
   "active": "2bccfe9370d406cb",
   "lastOpenFiles": [
+    "vault 维护/处理 .DS_Store 文件的问题等 terminal命令.md",
+    "自动化码垛 打包机器人 需求.html",
+    "vault 维护/styles folder/洗衣机线 抓取打包机械.pdf",
+    "vault 维护/styles folder",
+    "vault 维护/自动化码垛 打包机器人 需求.html",
+    "test/test.md",
+    "test",
     "test 2.md",
     "test.md"
   ]

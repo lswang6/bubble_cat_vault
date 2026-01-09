@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condor 仓储机器人系统需求仪表盘</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Warm Neutrals & Industrial Accents -->
+    <!-- Background: #f7f6f2 (Warm White) -->
+    <!-- Primary Text: #2d3436 (Dark Slate) -->
+    <!-- Accent 1: #e17055 (Terracotta - for actions/highlights) -->
+    <!-- Accent 2: #636e72 (Grey - for structure) -->
+    <!-- Secondary Background: #ffffff (White cards) -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgWarm: '#f7f6f2',
+                        cardWhite: '#ffffff',
+                        textMain: '#2d3436',
+                        textLight: '#636e72',
+                        accent: '#e17055',
+                        accentHover: '#d65d42',
+                        industrialBlue: '#74b9ff' // Soft blue for charts
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Chart Container Styles */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Flexible within grid */
+            height: 300px;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e0; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0aec0; 
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .active-tab {
+            border-bottom: 3px solid #e17055;
+            color: #2d3436;
+            font-weight: 700;
+        }
+    </style>
+    <!-- Application Structure Plan: 
+         1. Header: Project Context & High-level goal.
+         2. Metric Summary (Dashboard): Immediate view of Capacity, Line Count, and Product Variety.
+         3. Interactive Product Specs (Core Interaction): A selector for Models A-F that updates a detail card and a comparative chart. This solves the "multiple reference management" problem.
+         4. Physical Constraints Visualizer: A section dedicated to the 3.5m height and 500mm conveyor challenge using visual bars.
+         5. Solution & Tech Specs: Accordion/Cards for Gripper, MES, and Safety to avoid text overload.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-bgWarm text-textMain font-sans leading-relaxed selection:bg-accent selection:text-white">
+
+    <!-- Navigation / Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <div class="w-8 h-8 bg-accent rounded-sm flex items-center justify-center text-white font-bold text-lg">C</div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-textMain">Condor Electronics</h1>
+                    <p class="text-xs text-textLight uppercase tracking-wider">仓储机器人系统需求分析</p>
+                </div>
+            </div>
+            <nav class="flex space-x-6 text-sm font-medium">
+                <button onclick="scrollToSection('overview')" class="hover:text-accent transition-colors">项目概览</button>
+                <button onclick="scrollToSection('products')" class="hover:text-accent transition-colors">产品规格</button>
+                <button onclick="scrollToSection('constraints')" class="hover:text-accent transition-colors">环境限制</button>
+                <button onclick="scrollToSection('solutions')" class="hover:text-accent transition-colors">技术方案</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 space-y-12">
+
+        <!-- Section 1: Introduction & Key Metrics -->
+        <section id="overview" class="fade-in">
+            <div class="max-w-4xl mx-auto text-center mb-10">
+                <h2 class="text-3xl font-bold mb-4">自动化码垛升级计划</h2>
+                <p class="text-textLight text-lg">
+                    本项目旨在为三条厨电生产线（S2L1, S2L2, S2L3）末端引入工业机器人系统。
+                    目标是实现全自动抓取、堆叠与码垛，并与 MES 系统无缝集成，解决 21-50kg 重型产品的搬运难题。
+                </p>
+            </div>
+
+            <!-- Dashboard Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-accent hover:shadow-md transition-shadow">
+                    <h3 class="text-sm font-semibold text-textLight uppercase mb-2">总处理产能</h3>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-bold text-textMain">240</span>
+                        <span class="ml-2 text-sm text-textLight">件 / 小时</span>
+                    </div>
+                    <div class="mt-4 w-full bg-gray-100 rounded-full h-2">
+                        <div class="bg-accent h-2 rounded-full" style="width: 100%"></div>
+                    </div>
+                    <p class="mt-2 text-xs text-textLight">3条产线 x 90件/小时 (峰值)</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-industrialBlue hover:shadow-md transition-shadow">
+                    <h3 class="text-sm font-semibold text-textLight uppercase mb-2">兼容型号</h3>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-bold text-textMain">6</span>
+                        <span class="ml-2 text-sm text-textLight">种规格</span>
+                    </div>
+                    <div class="mt-4 flex space-x-1">
+                        <div class="h-2 w-1/6 bg-industrialBlue rounded-l-full opacity-40"></div>
+                        <div class="h-2 w-1/6 bg-industrialBlue opacity-60"></div>
+                        <div class="h-2 w-1/6 bg-industrialBlue opacity-80"></div>
+                        <div class="h-2 w-1/6 bg-industrialBlue opacity-100"></div>
+                        <div class="h-2 w-1/6 bg-industrialBlue opacity-80"></div>
+                        <div class="h-2 w-1/6 bg-industrialBlue rounded-r-full opacity-60"></div>
+                    </div>
+                    <p class="mt-2 text-xs text-textLight">重量: 21kg - 50kg</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border-t-4 border-gray-500 hover:shadow-md transition-shadow">
+                    <h3 class="text-sm font-semibold text-textLight uppercase mb-2">最大载荷</h3>
+                    <div class="flex items-baseline">
+                        <span class="text-4xl font-bold text-textMain">400</span>
+                        <span class="ml-2 text-sm text-textLight">kg / 托盘</span>
+                    </div>
+                    <div class="mt-4 w-full bg-gray-100 rounded-full h-2">
+                        <div class="bg-gray-500 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <p class="mt-2 text-xs text-textLight">包含托盘自身重量</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization & Content Choices: 
+             Goal: Compare. 
+             Viz: Interactive Bar Chart + Detail Card.
+             Interaction: Clicking a model button updates the text details and highlights the bar in the chart.
+             Justification: The user needs to understand the variety of products (size/weight) to see why a "one-size-fits-all" robot is difficult.
+        -->
+        <section id="products" class="pt-8 fade-in">
+            <div class="mb-6 border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-bold text-textMain">产品规格深度分析</h2>
+                <p class="text-textLight mt-2">
+                    机器人必须能够处理从轻型 (Model D) 到重型 (Model E) 的多种产品。
+                    点击下方按钮查看不同型号的详细参数及其对码垛的影响。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left: Controls & Details -->
+                <div class="lg:col-span-4 space-y-6">
+                    <!-- Selector -->
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <label class="block text-xs font-bold text-textLight uppercase mb-3">选择产品型号</label>
+                        <div class="grid grid-cols-3 gap-2" id="modelButtons">
+                            <!-- Buttons injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Detail Card -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-100 relative overflow-hidden transition-all" id="detailCard">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl font-bold pointer-events-none text-textMain" id="bgModelName">A</div>
+                        <h3 class="text-xl font-bold text-accent mb-1" id="modelName">Model A</h3>
+                        <p class="text-xs text-textLight mb-6">包装类型: 热缩膜</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="text-textLight">单体重量</span>
+                                    <span class="font-bold" id="modelWeight">48 kg</span>
+                                </div>
+                                <div class="w-full bg-gray-100 rounded-full h-1.5">
+                                    <div id="weightBar" class="bg-accent h-1.5 rounded-full transition-all duration-500" style="width: 96%"></div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-bgWarm p-3 rounded">
+                                    <span class="block text-xs text-textLight">尺寸 (LxDxH)</span>
+                                    <span class="font-mono text-sm font-bold text-textMain" id="modelDims">670 x 645 x 890</span>
+                                </div>
+                                <div class="bg-bgWarm p-3 rounded">
+                                    <span class="block text-xs text-textLight">每托盘数量</span>
+                                    <span class="font-mono text-sm font-bold text-textMain" id="modelQty">8 件</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Chart -->
+                <div class="lg:col-span-8 bg-white p-6 rounded-lg shadow-sm flex flex-col justify-center">
+                    <h4 class="text-sm font-bold text-textLight uppercase mb-4 text-center">各型号重量与堆叠数量对比</h4>
+                    <div class="chart-container">
+                        <canvas id="productChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="inline-block w-3 h-3 bg-industrialBlue rounded-full mr-2"></span>
+                        <span class="text-xs text-textLight mr-4">单件重量 (kg)</span>
+                        <span class="inline-block w-3 h-3 bg-gray-400 rounded-full mr-2"></span>
+                        <span class="text-xs text-textLight">每托盘数量 (件)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization & Content Choices: 
+             Goal: Inform & Organize.
+             Viz: HTML/CSS Visualization of spatial constraints + List of required features.
+             Interaction: Simple visual clarity.
+             Justification: The 3.5m height limit is a critical risk factor mentioned in the report. It needs visual representation.
+        -->
+        <section id="constraints" class="pt-8 fade-in">
+            <div class="mb-6 border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-bold text-textMain">物理限制与环境参数</h2>
+                <p class="text-textLight mt-2">
+                    机器人安装区域受到严格的空间限制，这对设备选型至关重要。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Visualizing Height Constraint -->
+                <div class="bg-white p-6 rounded-lg shadow-sm relative">
+                    <h3 class="font-bold text-lg mb-6">垂直空间挑战 (3.5m 限高)</h3>
+                    
+                    <div class="flex h-64 border-b-4 border-gray-700 relative items-end justify-around px-4">
+                        <!-- Ceiling Line -->
+                        <div class="absolute top-0 left-0 w-full border-t-2 border-dashed border-red-400 flex justify-center">
+                            <span class="bg-white px-2 text-xs text-red-500 -mt-2.5 font-bold">天花板限制: 3.5m</span>
+                        </div>
+
+                        <!-- Robot Representation -->
+                        <div class="w-16 bg-blue-100 border-2 border-industrialBlue rounded-t-lg flex flex-col justify-end items-center relative group" style="height: 60%">
+                            <div class="absolute -top-8 bg-blue-600 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                                需选用低矮型
+                            </div>
+                            <span class="text-xs text-blue-800 font-bold mb-2">机器人</span>
+                        </div>
+
+                        <!-- Pallet Stack Representation -->
+                        <div class="w-20 bg-orange-100 border-2 border-accent flex flex-col justify-end items-center relative" style="height: 45%">
+                            <div class="w-full h-1/4 border-b border-orange-200"></div>
+                            <div class="w-full h-1/4 border-b border-orange-200"></div>
+                            <div class="w-full h-1/4 border-b border-orange-200"></div>
+                            <span class="text-xs text-accent font-bold mb-2">码垛货物</span>
+                        </div>
+
+                        <!-- Conveyor Representation -->
+                        <div class="w-full absolute bottom-0 h-8 bg-gray-200 flex items-center justify-center">
+                            <span class="text-[10px] text-gray-500">输送线高度: 500mm</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-textLight mt-4">
+                        <span class="font-bold text-accent">专家建议：</span> 由于高度受限，应避免选择Z轴行程过高的标准码垛机，或采用倒挂/侧挂式安装方案。
+                    </p>
+                </div>
+
+                <!-- Textual Constraints List -->
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-lg shadow-sm flex items-start space-x-4">
+                        <div class="bg-yellow-100 p-2 rounded text-yellow-600 font-bold text-xl">⚠️</div>
+                        <div>
+                            <h4 class="font-bold text-textMain">包装易损性</h4>
+                            <p class="text-sm text-textLight mt-1">
+                                产品使用<strong>热缩膜包装</strong>。普通机械夹爪可能抓破薄膜。
+                                需使用“真空吸盘 + 底部/侧边托举”的复合式抓手。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow-sm flex items-start space-x-4">
+                        <div class="bg-green-100 p-2 rounded text-green-600 font-bold text-xl">🔄</div>
+                        <div>
+                            <h4 class="font-bold text-textMain">多线汇聚</h4>
+                            <p class="text-sm text-textLight mt-1">
+                                3条生产线汇聚至同一区域。机器人需具备较大的水平工作范围（臂展）或配置行走导轨。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-lg shadow-sm flex items-start space-x-4">
+                        <div class="bg-blue-100 p-2 rounded text-blue-600 font-bold text-xl">💻</div>
+                        <div>
+                            <h4 class="font-bold text-textMain">MES 集成</h4>
+                            <p class="text-sm text-textLight mt-1">
+                                必须与制造执行系统对接。机器人需具备自动切换程序的能力（Auto Learning Mode）。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization & Content Choices: 
+             Goal: Inform.
+             Viz: Simple Grid of Cards.
+             Interaction: None needed, pure information delivery.
+        -->
+        <section id="solutions" class="pt-8 pb-12 fade-in">
+             <div class="mb-6 border-b border-gray-200 pb-4">
+                <h2 class="text-2xl font-bold text-textMain">专家技术储备建议</h2>
+                <p class="text-textLight mt-2">
+                    基于需求分析，以下是针对本项目的关键技术推荐。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Rec 1 -->
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="text-accent text-2xl mb-3 font-bold">01</div>
+                    <h3 class="text-lg font-bold mb-2">复合抓手设计</h3>
+                    <p class="text-gray-400 text-sm">
+                        针对热缩膜包装，单纯吸盘风险大。建议采用侧抱（定位）+ 底部托板（承重）的组合设计，确保 50kg 货物不滑落。
+                    </p>
+                </div>
+                <!-- Rec 2 -->
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="text-accent text-2xl mb-3 font-bold">02</div>
+                    <h3 class="text-lg font-bold mb-2">安全防护系统</h3>
+                    <p class="text-gray-400 text-sm">
+                        鉴于工作区紧凑，需配置高灵敏度光幕与安全门锁。机器人动作范围必须严格限制在围栏内。
+                    </p>
+                </div>
+                <!-- Rec 3 -->
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="text-accent text-2xl mb-3 font-bold">03</div>
+                    <h3 class="text-lg font-bold mb-2">柔性程序切换</h3>
+                    <p class="text-gray-400 text-sm">
+                        利用视觉识别或扫码枪触发 MES 信号，使机器人自动调用对应的 Model A-F 码垛程序，减少人工干预。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-textLight text-sm">
+            <p class="font-bold text-textMain mb-2">Condor Electronics Requirement Analysis</p>
+            <p>Generated based on Engineering Dept. Specifications (2025)</p>
+            <p class="mt-4 text-xs opacity-60">
+                本页面为需求分析可视化演示，数据源自《仓储机器人安装需求书》
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Data Source ---
+        const products = [
+            { id: 'A', name: 'Model A', weight: 48,  l: 670, d: 645, h: 890, qty: 8,  maxPallet: 400 },
+            { id: 'B', name: 'Model B', weight: 33,  l: 670, d: 935, h: 610, qty: 8,  maxPallet: 290 },
+            { id: 'C', name: 'Model C', weight: 27,  l: 610, d: 670, h: 935, qty: 8,  maxPallet: 240 },
+            { id: 'D', name: 'Model D', weight: 21,  l: 530, d: 580, h: 555, qty: 12, maxPallet: 280 },
+            { id: 'E', name: 'Model E', weight: 50,  l: 610, d: 825, h: 860, qty: 4,  maxPallet: 200 },
+            { id: 'F', name: 'Model F', weight: 31,  l: 645, d: 670, h: 660, qty: 8,  maxPallet: 250 }
+        ];
+
+        let currentModel = products[0];
+        let productChart = null;
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderButtons();
+            updateDetailCard(currentModel);
+            initChart();
+        });
+
+        // --- Navigation Logic ---
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- Render UI ---
+        function renderButtons() {
+            const container = document.getElementById('modelButtons');
+            container.innerHTML = products.map(p => `
+                <button 
+                    onclick="selectModel('${p.id}')"
+                    class="py-2 px-3 rounded text-sm font-medium transition-all ${p.id === currentModel.id ? 'bg-accent text-white shadow-md' : 'bg-gray-100 text-textLight hover:bg-gray-200'}"
+                    id="btn-${p.id}"
+                >
+                    ${p.name}
+                </button>
+            `).join('');
+        }
+
+        function selectModel(id) {
+            currentModel = products.find(p => p.id === id);
+            renderButtons(); // Re-render to update active state
+            updateDetailCard(currentModel);
+            updateChartHighlight();
+        }
+
+        function updateDetailCard(model) {
+            // Text Updates
+            document.getElementById('modelName').textContent = model.name;
+            document.getElementById('bgModelName').textContent = model.id;
+            document.getElementById('modelWeight').textContent = `${model.weight} kg`;
+            document.getElementById('modelDims').textContent = `${model.l} x ${model.d} x ${model.h}`;
+            document.getElementById('modelQty').textContent = `${model.qty} 件`;
+            
+            // Bar Animation
+            const maxWeight = 50; // Heaviest is Model E
+            const percentage = (model.weight / maxWeight) * 100;
+            document.getElementById('weightBar').style.width = `${percentage}%`;
+        }
+
+        // --- Chart Logic ---
+        function initChart() {
+            const ctx = document.getElementById('productChart').getContext('2d');
+            
+            productChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: products.map(p => p.name),
+                    datasets: [
+                        {
+                            label: '单件重量 (kg)',
+                            data: products.map(p => p.weight),
+                            backgroundColor: products.map(p => p.id === currentModel.id ? '#e17055' : '#74b9ff'), // Highlight active
+                            borderRadius: 4,
+                            order: 1
+                        },
+                        {
+                            label: '托盘堆叠数量',
+                            data: products.map(p => p.qty),
+                            type: 'line',
+                            borderColor: '#636e72',
+                            borderWidth: 2,
+                            pointBackgroundColor: '#fff',
+                            pointRadius: 4,
+                            yAxisID: 'y1',
+                            order: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 750
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: '重量 (kg)' },
+                            grid: { color: '#f1f2f6' }
+                        },
+                        y1: {
+                            beginAtZero: true,
+                            position: 'right',
+                            title: { display: true, text: '数量 (件)' },
+                            grid: { display: false }
+                        },
+                        x: {
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }, // Custom legend used in HTML
+                        tooltip: {
+                            backgroundColor: '#2d3436',
+                            padding: 10,
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.dataset.label}: ${context.raw}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChartHighlight() {
+            if (!productChart) return;
+            
+            // Update bar colors based on selection
+            productChart.data.datasets[0].backgroundColor = products.map(p => 
+                p.id === currentModel.id ? '#e17055' : '#74b9ff'
+            );
+            productChart.update();
+        }
+
+    </script>
+</body>
+</html>
