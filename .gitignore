@@ -1,4 +1,32 @@
+# ==========================
+# macOS 系统文件
+# ==========================
+.DS_Store
+.AppleDouble
+.LSOverride
 
-/.DS_Store
+# Thumbnails
+._*
 
-/.DS_Store
+# ==========================
+# Obsidian
+# ==========================
+.obsidian/workspace.json
+.obsidian/cache/
+.obsidian/plugins/obsidian-git/*.log
+.obsidian/plugins/obsidian-git/tmp/
+
+# ==========================
+# 临时 / 编辑器文件
+# ==========================
+*.tmp
+*.swp
+*.swx
+*.bak
+*.orig
+*.old
+
+# ==========================
+# iCloud 同步可能的临时文件
+# ==========================
+*.icloud
