@@ -10,6 +10,7 @@
 # Obsidian
 # ==========================
 .obsidian/workspace.json
+.obsidian/workspace-mobile.json
 .obsidian/cache/
 .obsidian/plugins/obsidian-git/*.log
 .obsidian/plugins/obsidian-git/tmp/
