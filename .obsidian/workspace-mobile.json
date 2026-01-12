@@ -27,15 +27,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "清朝皇帝历史.canvas",
+                "file": "Goods_Storage_Sales_System.canvas",
                 "viewState": {
-                  "x": 1364.9500929988296,
-                  "y": 1110.9322236620542,
-                  "zoom": -0.5782807412224197
+                  "x": 540.776943066217,
+                  "y": 55.862573046189084,
+                  "zoom": -1.5749148117979217
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "清朝皇帝历史"
+              "title": "Goods_Storage_Sales_System"
             }
           }
         ],
@@ -189,6 +189,7 @@
   },
   "active": "2bccfe9370d406cb",
   "lastOpenFiles": [
+    "Goods_Storage_Sales_System 1.canvas",
     "清朝皇帝历史.canvas",
     "英伟达CES2025新品解析.canvas",
     "测试.canvas",
