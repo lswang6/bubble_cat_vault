@@ -1,0 +1,22 @@
+{
+  "id": "conv-1769005674803-wskwny1jr",
+  "title": "Summarize user's request",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769005674819,
+  "updatedAt": 1769006947849,
+  "lastResponseAt": 1769005801787,
+  "sessionId": "8e9c9b35-027c-4c51-83dc-a7e15a7f097e",
+  "sdkSessionId": "8e9c9b35-027c-4c51-83dc-a7e15a7f097e",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 2589,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 16210,
+    "contextWindow": 200000,
+    "contextTokens": 18799,
+    "percentage": 9
+  },
+  "displayContentMap": {
+    "_current_note__Claude_Code_________skills_md___cur_87_966536673": "hi there"
+  }
+}

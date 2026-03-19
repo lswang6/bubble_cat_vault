@@ -21,5 +21,13 @@
     "editor:unindent-list",
     "editor:configure-toolbar"
   ],
-  "promptDelete": false
+  "promptDelete": false,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

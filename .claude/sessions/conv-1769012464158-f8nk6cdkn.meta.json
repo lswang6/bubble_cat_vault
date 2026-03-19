@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769012464158-f8nk6cdkn",
+  "title": "Create greeting",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769012464158,
+  "updatedAt": 1769013471920,
+  "lastResponseAt": 1769012616714,
+  "sessionId": "3e23553f-27f3-455d-9e15-79da20214730",
+  "sdkSessionId": "3e23553f-27f3-455d-9e15-79da20214730",
+  "currentNote": "Claude Code 安装设置和使用/Claude Code CLI 安装和api 设置.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 2545,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 19377,
+    "contextWindow": 200000,
+    "contextTokens": 21922,
+    "percentage": 11
+  },
+  "toolDiffData": {
+    "toolu_vrtx_01Fr3ogGUAoEUTeanipF4uNm": {
+      "filePath": "Claude Code 安装设置和使用/Claude Code CLI 安装和api 设置.md",
+      "originalContent": "目前在 terminal 里面，通过 homebrew 方式安装\n\n\n安装后输入 claude 可以启动\n但此时提示需要登录\n\n可以先同时按 shift+cmd+. 显示系统隐藏的文件\n然后在如下路径新建一个文件\n/Users/louiswang/.claude/settings.json\n\n里面放置 api 和端点。目前我用本地的 Antigravity Tools 的：\n\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"http://127.0.0.1:8045\",\n    \"ANTHROPIC_AUTH_TOKEN\": \"sk-e765924f328b4d76b616ad8ad96cffb5\"\n  },\n  \"language\": \"Chinese\"\n}\n\n\n如果启动初始化有问题，可以编辑这个问题，\n/Users/louiswang/.claude.json\n\n第一行加入：\n\"hasCompletedOnboarding\": true,\n\n但是之后似乎这一行会消失，不过能运行就可以。\n\n",
+      "newContent": "# Claude Code CLI 安装和 API 设置\n\n> [!info]- 安装方式\n> 目前在 terminal 里面，通过 homebrew 方式安装\n>\n> 安装后输入 `claude` 可以启动\n> 但此时提示需要登录\n\n## API 配置\n\n> [!warning] 配置前准备\n> 可以先同时按 `shift+cmd+.` 显示系统隐藏的文件\n\n> [!example]- 创建配置文件\n> 在如下路径新建一个文件：\n> ```\n> /Users/louiswang/.claude/settings.json\n> ```\n>\n> 里面放置 api 和端点。目前我用本地的 Antigravity Tools 的：\n>\n> ```json\n> {\n>   \"env\": {\n>     \"ANTHROPIC_BASE_URL\": \"http://127.0.0.1:8045\",\n>     \"ANTHROPIC_AUTH_TOKEN\": \"sk-e765924f328b4d76b616ad8ad96cffb5\"\n>   },\n>   \"language\": \"Chinese\"\n> }\n> ```\n\n## 故障排除\n\n> [!tip]- 初始化问题修复\n> 如果启动初始化有问题，可以编辑这个文件：\n> ```\n> /Users/louiswang/.claude.json\n> ```\n>\n> 第一行加入：\n> ```json\n> \"hasCompletedOnboarding\": true,\n> ```\n>\n> **注意**：但是之后似乎这一行会消失，不过能运行就可以。\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__Claude_Code_________Claude_Code_CLI_106_3636748870": "Hi there"
+  }
+}

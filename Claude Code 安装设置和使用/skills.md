@@ -1,6 +1,7 @@
 原来也不是 claude code 独有，其他家有其他叫法：commands, workflows, prompts, steering
 不过领先的巨头们都叫 skills
 
+如下是我在一个 skills 中，发现他为不同的工具都准备了不同格式的 skills
 
 |AI Assistant|Folders to Copy|
 |---|---|

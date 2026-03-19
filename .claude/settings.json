@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Write(Claude Code 安装设置和使用/Claude Code CLI 安装和api 设置.md)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

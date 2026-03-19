@@ -1,0 +1,25 @@
+{
+	"nodes":[
+		{"id":"a1b2c3d4e5f60001","type":"group","x":-100,"y":-150,"width":1400,"height":1100,"label":"2025 英特尔新品解析图","color":"5"},
+		{"id":"a1b2c3d4e5f60002","type":"text","x":400,"y":-100,"width":400,"height":120,"text":"# 🔷 Intel Core Ultra 200 系列\n\n2025年全新处理器架构\n**Arrow Lake** + **Lunar Lake**","color":"5"},
+		{"id":"a1b2c3d4e5f60010","type":"group","x":-50,"y":100,"width":580,"height":800,"label":"Arrow Lake 架构","color":"2"},
+		{"id":"a1b2c3d4e5f60020","type":"group","x":600,"y":100,"width":580,"height":800,"label":"Lunar Lake 架构","color":"6"},
+		{"id":"a1b2c3d4e5f60011","type":"text","x":0,"y":150,"width":250,"height":200,"text":"## Core Ultra 200U\n**轻薄本系列**\n\n- 12核心 (2P+8E+2LPE)\n- 低功耗高效核心\n- 续航可达 **20小时**\n- 型号: Ultra 7 265U/255U\n  Ultra 5 235U/225U","color":"3"},
+		{"id":"a1b2c3d4e5f60012","type":"text","x":280,"y":150,"width":250,"height":200,"text":"## Core Ultra 200H\n**高性能轻薄本**\n\n- 14核心 (6P+8E)\n- 24MB L3缓存\n- CPU性能提升 **22%**\n- 游戏性能提升 **58%**\n- 更强集成显卡","color":"2"},
+		{"id":"a1b2c3d4e5f60013","type":"text","x":0,"y":380,"width":530,"height":180,"text":"## Core Ultra 200HX\n**旗舰移动工作站 / 游戏本**\n\n- 最高 **24核心** (8P+16E) | 36MB L3缓存\n- 单线程性能提升 **8%** | 多线程性能提升 **42%**\n- 基于桌面级 Arrow Lake-S 架构\n- 代表型号: **Core Ultra 9 285HX**","color":"1"},
+		{"id":"a1b2c3d4e5f60014","type":"text","x":0,"y":590,"width":530,"height":140,"text":"### 🎯 Arrow Lake 特点\n\n- Chiplet 芯片封装设计\n- 集成 NPU 人工智能加速\n- 注重 **原始性能** 与 **能效平衡**","color":"2"},
+		{"id":"a1b2c3d4e5f60021","type":"text","x":650,"y":150,"width":480,"height":220,"text":"## Core Ultra 200V\n**AI 旗舰轻薄本**\n\n- 专为高端超轻薄设计\n- 第二代 AI 优化 **NPU**\n- AI 算力达 **48 TOPS**\n- 支持 **Copilot+** PC\n- 极致功耗优化","color":"6"},
+		{"id":"a1b2c3d4e5f60022","type":"text","x":650,"y":400,"width":480,"height":160,"text":"### 🎮 全新 Intel Arc 显卡\n**Xe2 \"Battlemage\" 架构**\n\n- 下一代集成显卡\n- 显著提升图形性能\n- 支持硬件光追","color":"4"},
+		{"id":"a1b2c3d4e5f60023","type":"text","x":650,"y":590,"width":480,"height":140,"text":"### 📡 连接技术\n\n- 集成 **Intel Wi-Fi 7**\n- 更快网络速度\n- 更低延迟","color":"5"},
+		{"id":"a1b2c3d4e5f60024","type":"text","x":650,"y":760,"width":480,"height":120,"text":"### 🎯 Lunar Lake 特点\n\n- 全新核心架构设计\n- **AI 性能领先** 行业\n- 极致能效比","color":"6"},
+		{"id":"a1b2c3d4e5f60015","type":"text","x":0,"y":760,"width":530,"height":120,"text":"### 📅 发布信息\n\n- CES 2025 / Computex 2025 发布\n- 2025年1月起陆续上市\n- 预计发布 **22款以上** 移动处理器","color":"3"}
+	],
+	"edges":[
+		{"id":"b1c2d3e4f5a60001","fromNode":"a1b2c3d4e5f60002","fromSide":"bottom","toNode":"a1b2c3d4e5f60010","toSide":"top","color":"2","label":"性能优先"},
+		{"id":"b1c2d3e4f5a60002","fromNode":"a1b2c3d4e5f60002","fromSide":"bottom","toNode":"a1b2c3d4e5f60020","toSide":"top","color":"6","label":"AI优先"},
+		{"id":"b1c2d3e4f5a60003","fromNode":"a1b2c3d4e5f60011","fromSide":"right","toNode":"a1b2c3d4e5f60012","toSide":"left","color":"2"},
+		{"id":"b1c2d3e4f5a60004","fromNode":"a1b2c3d4e5f60012","fromSide":"bottom","toNode":"a1b2c3d4e5f60013","toSide":"top","color":"1","label":"更强"},
+		{"id":"b1c2d3e4f5a60005","fromNode":"a1b2c3d4e5f60021","fromSide":"bottom","toNode":"a1b2c3d4e5f60022","toSide":"top","color":"4"},
+		{"id":"b1c2d3e4f5a60006","fromNode":"a1b2c3d4e5f60022","fromSide":"bottom","toNode":"a1b2c3d4e5f60023","toSide":"top","color":"5"}
+	]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "conv-1770365252200-nsp0ciorv",
+  "title": "Debug Claude initialization issue",
+  "titleGenerationStatus": "success",
+  "createdAt": 1770365252201,
+  "updatedAt": 1771746858623,
+  "lastResponseAt": 1770365271399,
+  "sessionId": "251ac52d-bb7b-4cf7-a371-6bc81f7b68ed",
+  "sdkSessionId": "251ac52d-bb7b-4cf7-a371-6bc81f7b68ed",
+  "currentNote": "Chrome 调试/chrome 和 ai 的配合.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1110,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 21549,
+    "contextWindow": 200000,
+    "contextTokens": 22659,
+    "percentage": 11
+  }
+}

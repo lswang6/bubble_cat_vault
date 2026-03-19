@@ -14,6 +14,27 @@
   "pinNewInstance": true,
   "preferredRenderer": "webgl",
   "profiles": {
+    "6567e1b1-5245-4dce-a8c9-e67627ef1adb": {
+      "args": [
+        "\"$PWD\""
+      ],
+      "executable": "/System/Applications/Utilities/Terminal.app/Contents/macOS/Terminal",
+      "name": "",
+      "platforms": {
+        "darwin": true
+      },
+      "restoreHistory": false,
+      "rightClickAction": "copyPaste",
+      "successExitCodes": [
+        "0",
+        "SIGINT",
+        "SIGTERM"
+      ],
+      "terminalOptions": {
+        "documentOverride": null
+      },
+      "type": "external"
+    },
     "darwinExternalDefault": {
       "args": [
         "\"$PWD\""

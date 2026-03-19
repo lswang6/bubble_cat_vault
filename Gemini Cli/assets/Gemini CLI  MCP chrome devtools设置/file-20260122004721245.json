@@ -1,0 +1,25 @@
+{
+  "general": {
+    "previewFeatures": true
+  },
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp",
+        "--isolated"
+      ]
+    }
+  },
+  "security": {
+    "auth": {
+      "selectedType": "gemini-api-key"
+    },
+    "autoApprove": true,
+    "confirmationMode": "off"
+  },
+  "text_model": {
+    "model": "models/gemini-2-5-flash"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1769006972903-10ixg8uhm",
+  "title": "Highlight article with Obsidian",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769006972904,
+  "updatedAt": 1769007238943,
+  "lastResponseAt": 1769007166467,
+  "sessionId": "03da313d-a52a-40b6-856b-7bf7446a236a",
+  "sdkSessionId": "03da313d-a52a-40b6-856b-7bf7446a236a",
+  "currentNote": "Claude Code 安装设置和使用/Claude Code CLI 安装和api 设置.md",
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 3722,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 16156,
+    "contextWindow": 200000,
+    "contextTokens": 19878,
+    "percentage": 10
+  },
+  "displayContentMap": {
+    "_current_note__Claude_Code_________Claude_Code_CLI_123_2034324430": "可以用 obsidian 高亮工具来注释这个文章？"
+  }
+}
